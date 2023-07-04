@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
+import { motion } from "framer-motion";
 
 function Navbar() {
+
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav>
       <div className="nav-sub-cont">
@@ -98,6 +101,12 @@ function Navbar() {
           <li>Work</li>
           <li>Contact</li>
         </ul>
+
+        <div className="small-screen-nav-cont">
+          <svg style={{border: "1px solid green"}} viewBox="0 0 90 60">
+            <line fill="yellow" x1="0" y1="10" x2="90" y2="10" stroke="green" strokeWidth="6px"></line>
+          </svg>
+        </div>
       </div>
     </nav>
   );
