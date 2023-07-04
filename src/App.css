@@ -301,6 +301,47 @@ nav {
   position: relative;
 }
 
+@media screen and (max-width: 760px) {
+  .main-projects-cont{
+    flex-direction: column;
+    justify-content: center !important;
+  }
+
+  .about-project-cont{
+    position: static !important;
+    width: 100% !important;
+    background-color: var(--light-navy);
+    margin-top: 20px;
+    padding: 30px 20px;
+    align-items: start !important;
+  }
+
+  .about-project{
+    box-shadow: none !important;
+    padding-top: 0 !important;
+  }
+
+  .project-title, .project-links, .project-tools{
+    padding: 0 25px;
+  }
+
+  .img-cont img{
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about-project-cont{
+    padding: 20px 10px !important;
+  }
+
+  .projects-container{
+    width: 95vw !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .img-cont {
   position: relative;
   width: 100%;
@@ -365,10 +406,20 @@ nav {
 
 .project-tools li {
   padding: 3px 0 3px 10px;
+  font-family: sfMono;
+  font-size: 13px;
 }
 
 .project-links li{
   font-family: calibreSemi;
+}
+
+.small-screen-projects{
+  background-size: cover;
+}
+
+.small-screen-overlay{
+  background-color: rgba(10, 25, 47, 0.85);
 }
 
 .work-card-cont {

@@ -32,10 +32,7 @@ function MainProjectCard({
   }, [windowWidth]);
 
   return (
-    <div
-      className="main-projects-cont"
-      ref={containerRef}
-    >
+    <div className="main-projects-cont" ref={containerRef}>
       <div className="img-cont">
         <img src={`../pictures/${img}`} alt="" />
         <div className="img-cont-overlay"></div>
