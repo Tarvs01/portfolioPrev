@@ -1,9 +1,32 @@
-import React, {useState} from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Navbar() {
-
   const [isOpen, setIsOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  function setWidth() {
+    setWindowWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", setWidth);
+
+    return () => window.removeEventListener("resize", setWidth);
+  });
+
+  let breakPoint = 760;
+
+  function toggleSidebar() {
+    setIsOpen(!isOpen);
+
+    if (isOpen) {
+    }
+  }
+
+  function closeSidebar() {
+    setIsOpen(false);
+  }
   return (
     <nav>
       <div className="nav-sub-cont">
@@ -95,18 +118,92 @@ function Navbar() {
           </svg>
         </a>
 
-        <ul className="nav-items-cont">
-          <li>About</li>
-          <li>Experience</li>
-          <li>Work</li>
-          <li>Contact</li>
-        </ul>
+        {windowWidth >= breakPoint && (
+          <ul className="nav-items-cont">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+            <li>
+              <a href="#projects">Work</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        )}
 
-        <div className="small-screen-nav-cont">
-          <svg style={{border: "1px solid green"}} viewBox="0 0 90 60">
-            <line fill="yellow" x1="0" y1="10" x2="90" y2="10" stroke="green" strokeWidth="6px"></line>
-          </svg>
-        </div>
+        {windowWidth < breakPoint && (
+          <div
+            className={`${
+              isOpen
+                ? "small-screen-nav-cont anim-svg"
+                : "small-screen-nav-cont"
+            }`}
+            onClick={toggleSidebar}
+          >
+            <svg viewBox="0 0 100 80">
+              <rect
+                x="0"
+                y="20"
+                width="80"
+                height="8"
+                fill="currentColor"
+                id="rect1"
+                rx="3"
+              ></rect>
+              <rect
+                x="0"
+                y="40"
+                width="80"
+                height="8"
+                fill="currentColor"
+                id="rect2"
+                rx="3"
+              ></rect>
+              <rect
+                x="0"
+                y="60"
+                width="80"
+                height="8"
+                fill="currentColor"
+                id="rect3"
+                rx="3"
+              ></rect>
+            </svg>
+          </div>
+        )}
+
+        {isOpen && (
+          <div className="sidebar-bg">
+            <AnimatePresence>
+              <motion.div
+                className="sidebar"
+                initial={{ right: "-100vw" }}
+                animate={{ right: 0, transition: { duration: 0.3 } }}
+                exit={{ right: "-100vw" }}
+                key="right-menu"
+              >
+                <ul className="small-nav-items-cont">
+                  <li onClick={closeSidebar}>
+                    <a href="#about">About</a>
+                  </li>
+                  <li onClick={closeSidebar}>
+                    <a href="#experience">Experience</a>
+                  </li>
+                  <li onClick={closeSidebar}>
+                    <a href="#projects">Work</a>
+                  </li>
+                  <li onClick={closeSidebar}>
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        )}
       </div>
     </nav>
   );

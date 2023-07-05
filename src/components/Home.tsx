@@ -21,7 +21,7 @@ function Home() {
           <div className="hero-bg"></div>
           <div className="hero-words">
             <p className="hi">Hi! my name is</p>
-            <p className="name">Terver</p>
+            <p className="name">Stephen</p>
           </div>
         </div>
 
@@ -106,7 +106,7 @@ function Home() {
           <div className="aside-line"></div>
         </aside>
 
-        <div className="about-cont">
+        <div className="about-cont" id="about">
           <div className="about">
             <h1>About Me</h1>
             <p>
@@ -147,7 +147,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="projects-container">
+        <div className="projects-container" id="projects">
           <h1>PROJECTS</h1>
           {
             mainProjects.map((project) => {
@@ -161,6 +161,13 @@ function Home() {
               return <WorkCard key={work.id} {...work} />;
             })}
           </div>
+        </div>
+
+        <div className="contact-cont">
+          <h1>Contact me</h1>
+          <p>I am currently open to freelance work and job opportunities. Do not hesitate to contact me whenever.</p>
+
+          <a href="mailto:tervenda18@gmail.com" className="mail-button">Mail me</a>
         </div>
       </div>
     </div>
