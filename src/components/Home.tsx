@@ -5,6 +5,7 @@ import { projects } from "../data/projects";
 import { JobCard } from "../types/types";
 import { mainProjects } from "../data/mainProjects";
 import MainProjectCard from "./MainProjectCard";
+import Footer from "./Footer";
 
 function Home() {
   const [works, setWorks] = useState<JobCard[] | []>([]);
@@ -169,6 +170,8 @@ function Home() {
 
           <a href="mailto:tervenda18@gmail.com" className="mail-button">Mail me</a>
         </div>
+
+        <Footer />
       </div>
     </div>
   );

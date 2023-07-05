@@ -33,10 +33,10 @@ function MainProjectCard({
 
   return (
     <div className="main-projects-cont" ref={containerRef}>
-      <div className="img-cont">
+      <a href={`${externalLink}`} className="img-cont">
         <img src={`../pictures/${img}`} alt="" />
         <div className="img-cont-overlay"></div>
-      </div>
+      </a>
 
       <div className="about-project-cont" ref={aboutRef}>
         <div className="project-title">{title}</div>

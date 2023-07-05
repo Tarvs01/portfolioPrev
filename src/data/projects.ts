@@ -10,19 +10,11 @@ interface JobCard {
 export const projects: JobCard[] = [
     {
         id: 1,
-        name: "Game Hub",
-        description: "A simple website for gamers to get access to gaming news and access to the latest video games",
+        name: "Blizzard Clone",
+        description: "A clone of the official Blizzard website homepage. Built with React",
         gitLink: "https://github.com/tarvs01/game-hub",
         externalLink: "https://gamehub-xlyq.onrender.com",
-        toolsUsed: ["React", "CSS"]
-    },
-    {
-        id: 2,
-        name: "Save Them All",
-        description: "A site aimed at drawing attention to the plights of endangered animals and preservation steps being taken by organizations for their preservation",
-        gitLink: "https://github.com/tarvs01/game-hub",
-        externalLink: "https://gamehub-xlyq.onrender.com",
-        toolsUsed: ["React", "CSS", "SCSS", "Node"]
+        toolsUsed: ["React", "CSS", "Framer Motion"]
     },
     {
         id: 3,
@@ -54,6 +46,6 @@ export const projects: JobCard[] = [
         description: "A form with a submit button that evades the user until all input fields are correctly filled.",
         gitLink: "https://github.com/tarvs01/game-hub",
         externalLink: "https://gamehub-xlyq.onrender.com",
-        toolsUsed: ["React", "CSS", "sass"]
+        toolsUsed: ["React", "CSS", "SCSS"]
     }
 ]
