@@ -6,6 +6,8 @@ import { JobCard } from "../types/types";
 import { mainProjects } from "../data/mainProjects";
 import MainProjectCard from "./MainProjectCard";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 function Home() {
   const [works, setWorks] = useState<JobCard[] | []>([]);
@@ -22,13 +24,16 @@ function Home() {
           <div className="hero-bg"></div>
           <div className="hero-words">
             <p className="hi">Hi! my name is</p>
-            <p className="name">Tafa Gamur</p>
+            <p className="name">Stephen Tarvs</p>
             <p className="hero-about">
               I am a frontend web developer specializing in building (and
               occasionally designing) exceptional digital experiences.
               Currently, I work as a freelancer and I am open to job
               opportunities.
             </p>
+            <button className="hero-button">
+              <Link to="contact" spy={true} offset={-10} smooth={true}>Contact Me</Link>
+            </button>
           </div>
         </div>
 
@@ -179,6 +184,41 @@ function Home() {
             Mail me
           </a>
         </div>
+
+        {/* <div className="svg-animation-cont">
+          <motion.svg
+            className="heart-loader"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 90 90"
+            version="1.1"
+          >
+            <motion.g className="heart-loader__group">
+              <motion.path
+                className="heart-loader__square"
+                stroke-width="1"
+                fill="none"
+                d="M0,30 0,90 60,90 60,30z"
+              />
+              <motion.path
+                className="heart-loader__circle m--left"
+                stroke-width="1"
+                fill="none"
+                d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"
+              />
+              <motion.path
+                className="heart-loader__circle m--right"
+                stroke-width="1"
+                fill="none"
+                d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"
+              />
+              <motion.path
+                className="heart-loader__heartPath"
+                stroke-width="2"
+                d="M60,30 a30,30 0 0,1 0,60 L0,90 0,30 a30,30 0 0,1 60,0"
+              />
+            </motion.g>
+          </motion.svg>
+        </div> */}
 
         <Footer />
       </div>
