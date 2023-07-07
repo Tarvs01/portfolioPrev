@@ -7,8 +7,8 @@ export const mainProjects: MainProjectData[] = [
         description: "Game hub is a gamer centered website where gamers can get gaming news and get access to new and old games through stores.",
         img: "game-hub.png",
         tools: ["React", "CSS", "Javascript"],
-        gitLink: "/",
-        externalLink: "/"
+        gitLink: "https://github.com/Tarvs01/Game-Hub",
+        externalLink: "https://gamehub-xlyq.onrender.com/"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const mainProjects: MainProjectData[] = [
         img: "save-them-all.png",
         tools: ["React", "jQuery", "Javascript", "CSS", "Node"],
         gitLink: "/",
-        externalLink: "/"
+        externalLink: "https://save-them-all.onrender.com/"
     },
     {
         id: 3,
@@ -26,6 +26,6 @@ export const mainProjects: MainProjectData[] = [
         img: "get-response.png",
         tools: ["HTML","CSS", "Javascript"],
         gitLink: "/",
-        externalLink: "/"
+        externalLink: "https://get-response-clone.onrender.com"
     }
 ]

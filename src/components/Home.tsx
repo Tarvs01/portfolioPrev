@@ -22,13 +22,19 @@ function Home() {
           <div className="hero-bg"></div>
           <div className="hero-words">
             <p className="hi">Hi! my name is</p>
-            <p className="name">Stephen</p>
+            <p className="name">Tafa Gamur</p>
+            <p className="hero-about">
+              I am a frontend web developer specializing in building (and
+              occasionally designing) exceptional digital experiences.
+              Currently, I work as a freelancer and I am open to job
+              opportunities.
+            </p>
           </div>
         </div>
 
         <aside className="left-aside">
           {/* github */}
-          <a href={"/"}>
+          <a href={"https://github.com/Tarvs01"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -46,7 +52,7 @@ function Home() {
           </a>
 
           {/* twitter */}
-          <a href="/">
+          <a href="https://twitter.com/radsteve01">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -86,7 +92,7 @@ function Home() {
           </a>
 
           {/* codewars */}
-          <a href="/">
+          <a href="https://www.codewars.com/users/Tarvs01">
             <svg
               fill="currentColor"
               viewBox="0 0 32 32"
@@ -101,8 +107,8 @@ function Home() {
         </aside>
 
         <aside className="right-aside">
-          <a href="/" className="aside-mail">
-            tervenda18@gmail.com
+          <a href="mailto:tarvstech@gmail.com" className="aside-mail">
+            tarvstech@gmail.com
           </a>
           <div className="aside-line"></div>
         </aside>
@@ -150,11 +156,9 @@ function Home() {
 
         <div className="projects-container" id="projects">
           <h1>PROJECTS</h1>
-          {
-            mainProjects.map((project) => {
-              return <MainProjectCard key={project.id} {...project} />
-            })
-          }
+          {mainProjects.map((project) => {
+            return <MainProjectCard key={project.id} {...project} />;
+          })}
 
           <h2>Other Notable Projects</h2>
           <div className="projects-cont">
@@ -164,11 +168,16 @@ function Home() {
           </div>
         </div>
 
-        <div className="contact-cont">
+        <div className="contact-cont" id="contact">
           <h1>Contact me</h1>
-          <p>I am currently open to freelance work and job opportunities. Do not hesitate to contact me whenever.</p>
+          <p>
+            I am currently open to freelance work and job opportunities. Do not
+            hesitate to contact me whenever.
+          </p>
 
-          <a href="mailto:tervenda18@gmail.com" className="mail-button">Mail me</a>
+          <a href="mailto:tervenda18@gmail.com" className="mail-button">
+            Mail me
+          </a>
         </div>
 
         <Footer />

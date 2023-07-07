@@ -15,7 +15,8 @@ function WorkCard({
   id = id - 1;
 
   return (
-    <motion.a href={`${externalLink}`} className={isInView ? "work-card-cont slide-up" : "work-card-cont"} ref={ref} style={{animationDelay: `${id%3 === 0 ? "0s" : id%3 === 1 ? "0.1s" : "0.2s"}`}}>
+    <motion.div className={isInView ? "work-card-cont slide-up" : "work-card-cont"} ref={ref} style={{ animationDelay: `${id % 3 === 0 ? "0s" : id % 3 === 1 ? "0.1s" : "0.2s"}` }}>
+      <a href={`${externalLink}`} className="work-card-anchor">&nbsp;</a>
       <div className="card-top">
         <div className="folder-icon">
           <svg
@@ -84,7 +85,7 @@ function WorkCard({
           return <li key={index}>{tool}</li>;
         })}
       </ul>
-    </motion.a>
+    </motion.div>
   );
 }
 

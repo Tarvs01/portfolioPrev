@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +8,9 @@ function Navbar() {
 
   function setWidth() {
     setWindowWidth(window.innerWidth);
+    if (window.innerWidth > breakPoint) {
+      closeSidebar();
+    }
   }
 
   useEffect(() => {
@@ -20,13 +24,20 @@ function Navbar() {
   function toggleSidebar() {
     setIsOpen(!isOpen);
 
-    if (isOpen) {
+    let html: HTMLHtmlElement | null = document.querySelector("html");
+    if (!isOpen) {
+      html!.style.overflow = "hidden";
+    } else {
+      html!.style.overflowY = "scroll";
     }
   }
 
   function closeSidebar() {
     setIsOpen(false);
+    let html: HTMLHtmlElement | null = document.querySelector("html");
+    html!.style.overflowY = "scroll";
   }
+
   return (
     <nav>
       <div className="nav-sub-cont">
@@ -121,16 +132,40 @@ function Navbar() {
         {windowWidth >= breakPoint && (
           <ul className="nav-items-cont">
             <li>
-              <a href="#about">About</a>
+              <Link
+                to="about"
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-100}
+              >
+                About
+              </Link>
             </li>
             <li>
               <a href="#experience">Experience</a>
             </li>
             <li>
-              <a href="#projects">Work</a>
+              <Link
+                to="projects"
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-40}
+              >
+                Work
+              </Link>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <Link
+                to="contact"
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-30}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         )}
@@ -176,34 +211,61 @@ function Navbar() {
           </div>
         )}
 
-        {isOpen && (
-          <div className="sidebar-bg">
-            <AnimatePresence>
+        <AnimatePresence>
+          {isOpen && (
+            <div className="sidebar-bg">
               <motion.div
                 className="sidebar"
                 initial={{ right: "-100vw" }}
                 animate={{ right: 0, transition: { duration: 0.3 } }}
-                exit={{ right: "-100vw" }}
+                exit={{ right: "-100vw", transition: { duration: 0.4 } }}
                 key="right-menu"
               >
                 <ul className="small-nav-items-cont">
-                  <li onClick={closeSidebar}>
-                    <a href="#about">About</a>
+                  <li>
+                    <Link
+                      to="about"
+                      smooth={true}
+                      spy={true}
+                      duration={500}
+                      offset={-100}
+                      onClick={closeSidebar}
+                    >
+                      About
+                    </Link>
                   </li>
                   <li onClick={closeSidebar}>
                     <a href="#experience">Experience</a>
                   </li>
-                  <li onClick={closeSidebar}>
-                    <a href="#projects">Work</a>
+                  <li>
+                    <Link
+                      to="projects"
+                      smooth={true}
+                      spy={true}
+                      duration={500}
+                      offset={-40}
+                      onClick={closeSidebar}
+                    >
+                      Work
+                    </Link>
                   </li>
-                  <li onClick={closeSidebar}>
-                    <a href="#contact">Contact</a>
+                  <li>
+                    <Link
+                      to="contact"
+                      smooth={true}
+                      spy={true}
+                      duration={500}
+                      offset={30}
+                      onClick={closeSidebar}
+                    >
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </motion.div>
-            </AnimatePresence>
-          </div>
-        )}
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
