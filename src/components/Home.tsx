@@ -75,7 +75,7 @@ function Home() {
           </a>
 
           {/* facebook */}
-          <a href="/">
+          <a href="https://www.facebook.com/ayo.stephen.965">
             <svg
               fill="currentColor"
               version="1.1"

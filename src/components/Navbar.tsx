@@ -143,9 +143,6 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
               <Link
                 to="projects"
                 smooth={true}
@@ -233,9 +230,6 @@ function Navbar() {
                     >
                       About
                     </Link>
-                  </li>
-                  <li onClick={closeSidebar}>
-                    <a href="#experience">Experience</a>
                   </li>
                   <li>
                     <Link

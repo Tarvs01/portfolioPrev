@@ -307,6 +307,24 @@ rect {
   max-width: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  .hero-words{
+    top: 10% !important;
+    left: 10% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .name{
+    font-size: 40px !important;
+    line-height: 50px !important;
+  }
+
+  .hero-about{
+    font-size: 16px !important;
+  }
+}
+
 body {
   scroll-behavior: smooth;
 }
