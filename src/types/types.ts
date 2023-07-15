@@ -16,3 +16,9 @@ export interface MainProjectData{
   gitLink?: string,
   externalLink: string
 }
+
+export interface SkillsData{
+  id: number,
+  name: string,
+  percent: number
+}

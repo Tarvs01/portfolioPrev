@@ -297,7 +297,7 @@ rect {
 .hero-words {
   width: -webkit-fit-content;
   width: -moz-fit-content;
-  width: fit-content;
+  width: 88vw;
   position: absolute;
   top: 20%;
   left: 20%;
@@ -308,19 +308,19 @@ rect {
 }
 
 @media screen and (max-width: 600px) {
-  .hero-words{
-    top: 10% !important;
-    left: 10% !important;
+  .hero-words {
+    top: 20% !important;
+    left: 7% !important;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .name{
+  .name {
     font-size: 40px !important;
     line-height: 50px !important;
   }
 
-  .hero-about{
+  .hero-about {
     font-size: 16px !important;
   }
 }
@@ -482,7 +482,7 @@ body {
   font-family: sfMono;
 }
 
-.projects-container h1::after {
+.projects-container h1::after, .about h1::after, .skills h1::after, .contact-cont h1::after {
   content: " ";
   display: block;
   width: 50px;
@@ -740,7 +740,7 @@ html {
   height: 100%;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .slide-up {
@@ -816,6 +816,7 @@ html {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  z-index: 2;
 }
 
 .top-links a,
@@ -912,6 +913,10 @@ html {
   width: 47%;
 }
 
+.about h1, .skills h1{
+  margin-bottom: 20px;
+}
+
 .about p {
   margin-bottom: 10px;
 }
@@ -953,6 +958,37 @@ html {
   }
 }
 
+.skill-cont {
+  width: 90vw;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.skill-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-words {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--lightest-gray);
+}
+
+.skill-line-cont {
+  height: 7px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.skill-line {
+  height: 100%;
+  background-color: var(--dark-navy);
+  border-radius: 10px;
+}
+
 .contact-cont {
   width: 90vw;
   max-width: 700px;
@@ -963,8 +999,10 @@ html {
   text-align: center;
   color: var(--lightest-gray);
   font-size: 50px;
+  line-height: 50px;
   font-weight: 900;
   font-family: calibreSemi;
+  margin-bottom: 20px;
 }
 
 .contact-cont p {
@@ -992,14 +1030,19 @@ html {
   height: fit-content;
   color: var(--light-green);
   font-family: sfMono;
-  -webkit-box-shadow: 0px 4px 14px var(--navy-shadow);
-  box-shadow: 0px 4px 14px var(--navy-shadow);
+  /* -webkit-box-shadow: 0px 4px 14px var(--navy-shadow);
+  box-shadow: 0px 4px 14px var(--navy-shadow); */
   padding: 15px 30px;
   border-radius: 5px;
+  border: 2px solid var(--light-green);
+  transition: all 0.2s linear;
 }
 
 .mail-button:hover {
-  border: 2px solid var(--light-green);
+  /* border: 2px solid var(--light-green); */
+  background-color: var(--light-green);
+  color: black;
+  font-weight: 900;
 }
 
 .footer-main {

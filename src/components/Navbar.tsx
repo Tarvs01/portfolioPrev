@@ -249,7 +249,7 @@ function Navbar() {
                       smooth={true}
                       spy={true}
                       duration={500}
-                      offset={30}
+                      offset={-70}
                       onClick={closeSidebar}
                     >
                       Contact

@@ -8,6 +8,8 @@ import MainProjectCard from "./MainProjectCard";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import { skills } from "../data/skills";
+import Skill from "./Skill";
 
 function Home() {
   const [works, setWorks] = useState<JobCard[] | []>([]);
@@ -24,7 +26,7 @@ function Home() {
           <div className="hero-bg"></div>
           <div className="hero-words">
             <p className="hi">Hi! my name is</p>
-            <p className="name">Stephen Tarvs</p>
+            <p className="name">Stephen Ayo</p>
             <p className="hero-about">
               I am a frontend web developer specializing in building (and
               occasionally designing) exceptional digital experiences.
@@ -32,7 +34,9 @@ function Home() {
               opportunities.
             </p>
             <button className="hero-button">
-              <Link to="contact" spy={true} offset={-10} smooth={true}>Contact Me</Link>
+              <Link to="contact" spy={true} offset={-10} smooth={true}>
+                Contact Me
+              </Link>
             </button>
           </div>
         </div>
@@ -113,7 +117,7 @@ function Home() {
 
         <aside className="right-aside">
           <a href="mailto:tarvstech@gmail.com" className="aside-mail">
-            tarvstech@gmail.com
+            ayostephen.tech@gmail.com
           </a>
           <div className="aside-line"></div>
         </aside>
@@ -159,6 +163,12 @@ function Home() {
           </div>
         </div>
 
+        {/* <div className="skills-cont">
+          {skills.map((skill) => {
+            return <Skill key={skill.id} {...skill} />;
+          })}
+        </div> */}
+
         <div className="projects-container" id="projects">
           <h1>PROJECTS</h1>
           {mainProjects.map((project) => {
@@ -180,7 +190,7 @@ function Home() {
             hesitate to contact me whenever.
           </p>
 
-          <a href="mailto:tervenda18@gmail.com" className="mail-button">
+          <a href="mailto:ayostephen.tech@gmail.com" className="mail-button">
             Mail me
           </a>
         </div>
