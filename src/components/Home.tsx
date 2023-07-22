@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { skills } from "../data/skills";
 import Skill from "./Skill";
+import About from "./About";
+import Skills from "./Skills";
 
 function Home() {
   const [works, setWorks] = useState<JobCard[] | []>([]);
@@ -26,7 +28,7 @@ function Home() {
           <div className="hero-bg"></div>
           <div className="hero-words">
             <p className="hi">Hi! my name is</p>
-            <p className="name">Stephen Ayo</p>
+            <p className="name">Ayo Stephen</p>
             <p className="hero-about">
               I am a frontend web developer specializing in building (and
               occasionally designing) exceptional digital experiences.
@@ -123,44 +125,8 @@ function Home() {
         </aside>
 
         <div className="about-cont" id="about">
-          <div className="about">
-            <h1>About Me</h1>
-            <p>
-              Hello! My name is Stephen and I enjoy coding. My interest in web
-              development started in 2021 when I had to develop a website for a
-              school project. Using my previous coding experience to implement
-              design algorithms increased my interest in frontend development
-              and that kick-started my web development career.
-            </p>
-            <p>
-              Fast-forward to today and I am a skilled frontend web developer
-              specialized in React and able to develop successful websites that
-              satisfy customer goals as well as focus on working with end
-              customers to collect requirements, create plans, and enhance
-              designs for usability and functionality.
-            </p>
-          </div>
-          <div className="skills">
-            <h1>Skills</h1>
-            <h3>Languages and Tools</h3>
-            <ul className="language-frameworks">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Javascript</li>
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>jQuery</li>
-              <li>SCSS</li>
-              <li>Bootstrap</li>
-              <li>Node js Basics</li>
-              <li>Express</li>
-              <li>Git</li>
-              <li>Github</li>
-              <li>VS code</li>
-              <li>Postman</li>
-              <li>mySql</li>
-            </ul>
-          </div>
+          <About />
+          <Skills />
         </div>
 
         {/* <div className="skills-cont">

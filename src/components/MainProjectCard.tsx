@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { MainProjectData } from "../types/types";
 
 function MainProjectCard({
@@ -11,7 +12,9 @@ function MainProjectCard({
 }: MainProjectData) {
   let containerRef = useRef<HTMLDivElement>(null);
 
-  let aboutRef = useRef<HTMLDivElement>(null)
+  let aboutRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true });
+  let aboutInView = useInView(aboutRef, { once: true });
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -33,12 +36,20 @@ function MainProjectCard({
 
   return (
     <div className="main-projects-cont" ref={containerRef}>
-      <a href={`${externalLink}`} className="img-cont">
+      <a
+        href={`${externalLink}`}
+        className={isInView ? "img-cont about-anim" : "img-cont"}
+      >
         <img src={`../pictures/${img}`} alt="" />
         <div className="img-cont-overlay"></div>
       </a>
 
-      <div className="about-project-cont" ref={aboutRef}>
+      <div
+        className={
+          aboutInView ? "about-project-cont opaque" : "about-project-cont"
+        }
+        ref={aboutRef}
+      >
         <div className="project-title">{title}</div>
 
         <div className="about-project">{description}</div>

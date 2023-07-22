@@ -337,12 +337,32 @@ body {
   font-size: 16px;
   line-height: 25px;
   font-family: sfMono;
+  position: relative;
 }
 
 .name {
   font-size: 60px;
   color: var(--light-green);
   line-height: 90px;
+  animation: colour 3s linear infinite alternate;
+}
+
+@keyframes colour {
+  0% {
+    color: var(--light-green);
+  }
+
+  350% {
+    color: var(--blue);
+  }
+
+  65% {
+    color: #17b18d;
+  }
+
+  100% {
+    color: white;
+  }
 }
 
 .hero-about {
@@ -482,7 +502,10 @@ body {
   font-family: sfMono;
 }
 
-.projects-container h1::after, .about h1::after, .skills h1::after, .contact-cont h1::after {
+.projects-container h1::after,
+.about h1::after,
+.skills h1::after,
+.contact-cont h1::after {
   content: " ";
   display: block;
   width: 50px;
@@ -609,6 +632,8 @@ html {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  position: relative;
+  display: block;
 }
 
 .img-cont img:hover {
@@ -658,6 +683,20 @@ html {
   right: 0;
   max-width: 550px;
   width: 50%;
+}
+
+.opaque {
+  animation: opaque 0.5s ease-in 0s 1 forwards;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .project-title {
@@ -895,11 +934,6 @@ html {
   .skills {
     margin-top: 80px;
   }
-
-  .about h1,
-  .skills h1 {
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 760px) {
@@ -910,11 +944,50 @@ html {
 
 .about,
 .skills {
+  position: relative;
+}
+
+.about-anim {
+  animation: ltr 0.5s linear 0s 1 forwards;
+}
+
+.skills-anim {
+  animation: rtl 0.4s linear 0s 1 forwards;
+}
+
+@keyframes ltr {
+  0% {
+    left: -80px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes rtl {
+  0% {
+    right: -80px;
+    opacity: 0;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.about,
+.skills {
   width: 47%;
 }
 
-.about h1, .skills h1{
+.about h1,
+.skills h1 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .about p {
